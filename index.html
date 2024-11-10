@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>用戶列表</title>
+        <!-- link -->
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+        <!-- script -->
+        <script src="https://cdn.jsdelivr.net/npm/pdquickui@0.5.4/dist/PDQuickUI.js"></script>
+        <script src="./js/index.js"></script>
+    </head>
+
+    <body id="body">
+        <section>
+            <!-- 左側導覽列 -->
+            <temp :path="./view/body-left.html"></temp>
+            <section class="body-right">
+                <!-- 頂部導覽列 -->
+                <nav>
+                    <button @click="body_left_show">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <a :href="e.href" :for="e in top_tab">{{ e.title }}</a>
+                </nav>
+                <!--  -->
+                <p class="hint">還沒想好放什麼合適</p>
+            </section>
+        </section>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", _ => {
+            page = new QUI({
+                id: "body",
+                data: {
+                    is_guest: false,
+                    login: {
+                        title: "LOGIN",
+                        email: "",
+                        password: "",
+                    },
+                    title: "管理後台",
+                    left: {
+                        is_body_left_min: getCookie("is_body_left_min") || 0,
+                        is_database_list: 0,
+                        is_database_add: 0,
+                        is_article_add: 0,
+                        is_folder_image: 0,
+                        is_file_edit: 0,
+                        is_json_edit: 0
+                    },
+                },
+                event: {
+                    ...default_events,
+                },
+                next: () => {
+                }
+            });
+        });
+    </script>
+
+</html>

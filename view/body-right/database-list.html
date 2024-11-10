@@ -1,0 +1,176 @@
+<section class="body-right">
+    <nav>
+        <section>
+            <button>
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </section>
+        <strong>PARDN 管理後台</strong>
+        <section>
+            <button>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </section>
+    </nav>
+    <!-- -->
+    <header>
+        <strong>列表範例</strong>
+        <section>
+            <!-- 可以放按鈕 -->
+            <!-- <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                篩選
+            </button> -->
+        </section>
+    </header>
+    <!-- 表單 -->
+    <!-- <section class="body-right-form">
+        <section>
+            <strong>{{ form.title }}</strong>
+            <form action="">
+                <label :for="(key, val) in form.data" :class="val.size">{{ key }}
+                    <input :if="val.is_select == false" :type="val.type" :placeholder="val.placeholder" :model="val.value">
+                </label>
+            </form>
+            <section>
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    搜尋
+                </button>
+                <button>
+                    <i class="fa-solid fa-file-export"></i>
+                    匯出
+                </button>
+                <button class="clear">
+                    <i class="fa-solid fa-eraser"></i>
+                    清除
+                </button>
+            </section>
+        </section>
+    </section> -->
+    <!-- 資料庫 -->
+    <section class="body-right-database">
+        <section>
+            <details open>
+                <summary>
+                    <span>篩選條件 (3)</span>
+                    <section>
+                        <!-- 可以放按鈕 -->
+                        <button>
+                            <i class="fa-solid fa-circle-plus"></i>
+                            添加
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-eraser"></i>
+                            清除
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            送出
+                        </button>
+                    </section>
+                </summary>
+                <section data-row="1">
+                    <form action="">
+                        <button type="button">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </button>
+                        <select name="">
+                            <option value="">SN</option>
+                            <option value="">自訂ID</option>
+                            <option value="">標題</option>
+                            <option value="">副標題</option>
+                            <option value="">內容</option>
+                        </select>
+                        <select name="">
+                            <option value="">等於</option>
+                            <option value="">大於</option>
+                            <option value="">大於等於</option>
+                            <option value="">小於</option>
+                            <option value="">小於等於</option>
+                            <option value="">包含</option>
+                        </select>
+                        <input type="text" name="value" placeholder="值">
+                    </form>
+                    <form action="">
+                        <button type="button">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </button>
+                        <select name="">
+                            <option value="">SN</option>
+                            <option value="">自訂ID</option>
+                            <option value="">標題</option>
+                            <option value="">副標題</option>
+                            <option value="">內容</option>
+                        </select>
+                        <select name="">
+                            <option value="">等於</option>
+                            <option value="">大於</option>
+                            <option value="">大於等於</option>
+                            <option value="">小於</option>
+                            <option value="">小於等於</option>
+                            <option value="">包含</option>
+                        </select>
+                        <input type="text" name="value" placeholder="值">
+                    </form>
+                    <form action="">
+                        <button type="button">
+                            <i class="fa-solid fa-circle-minus"></i>
+                        </button>
+                        <select name="">
+                            <option value="">SN</option>
+                            <option value="">自訂ID</option>
+                            <option value="">標題</option>
+                            <option value="">副標題</option>
+                            <option value="">內容</option>
+                        </select>
+                        <select name="">
+                            <option value="">等於</option>
+                            <option value="">大於</option>
+                            <option value="">大於等於</option>
+                            <option value="">小於</option>
+                            <option value="">小於等於</option>
+                            <option value="">包含</option>
+                        </select>
+                        <input type="text" name="value" placeholder="值">
+                    </form>
+                </section>
+            </details>
+        </section>
+        <section>
+            <!-- 列表 -->
+            <table data-head="1">
+                <thead>
+                    <tr>
+                        <th :for="e in database.head">{{ e }}</th>
+                        <th>其他</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :class="e.class" :for="e in database.list">
+                        <td :for="a in e.body" :html="a"></td>
+                        <td>
+                            <button>編輯</button>
+                            <button class="alert" :if="e.is_deleted == false">刪除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- 按鈕 -->
+        <footer>
+            <section>
+                <a href="" user-select="0">上一頁</a>
+                <a href="" user-select="0">下一頁</a>
+            </section>
+            <section>
+                <p user-select="0">顯示</p>
+                <select name="" id="">
+                    <option value="">10</option>
+                    <option value="">50</option>
+                </select>
+                <p user-select="0">結果</p>
+            </section>
+        </footer>
+    </section>
+</section>
