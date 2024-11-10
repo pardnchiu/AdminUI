@@ -1,6 +1,5 @@
 >section.body-right-database {
     width: 100%;
-    background-color: #fff;
     border-top: 1px solid $body_left_border;
     border-bottom: 1px solid $body_left_border;
 
@@ -10,7 +9,6 @@
 
     >section {
         width: 100%;
-        overflow: scroll;
 
         >details {
             display: flex;
@@ -22,6 +20,14 @@
 
                 span {
                     width: initial;
+
+                    >b {
+                        opacity: 0;
+                    }
+
+                    >i {
+                        transform: rotate(90deg);
+                    }
                 }
             }
 
@@ -58,6 +64,16 @@
                 span {
                     flex-shrink: 0;
                     width: 100%;
+
+                    >b {
+                        margin-left: 0.5rem;
+                        font-weight: 500;
+                    }
+
+                    >i {
+                        margin-left: $_4;
+                        transition: 0.2s;
+                    }
                 }
 
                 button {
@@ -121,12 +137,15 @@
 
                 select,
                 input {
+                    flex-grow: 0;
+                    flex-shrink: 0;
                     padding: 0 $_12;
-                    line-height: $_28;
+                    line-height: $_32;
                     font-size: $_14;
                     border-radius: $_8;
                     background-color: #fff;
                     color: $color_text_9;
+                    border: 0.5px solid $color_text_1;
                 }
 
                 input {
@@ -135,146 +154,151 @@
             }
         }
 
-        >table {
-            min-width: 100%;
-            border-collapse: collapse;
-
-            >thead {
-                position: sticky;
-                top: 0;
-
-                >tr {
-                    border-bottom: 0.5px solid $color_text_1;
-
-                    >th {
-                        padding: 0 $_16;
-                        line-height: $_48;
-                        font-size: $_12;
-                        white-space: nowrap;
-                        color: $text_dark;
-                        transition: 0.2s;
-                        background-color: #fff;
-                        cursor: pointer;
-
-                        @media (hover: hover) and (pointer: fine) {
-
-                            &:hover {
-                                background-color: $color_system_2;
-                            }
-                        }
-
-                        &:not(:first-child)::before {
-                            content: "";
-                            position: absolute;
-                            top: $_16;
-                            left: -0.5px;
-                            display: block;
-                            width: 1px;
-                            height: $_16;
-                            background-color: $color_text_4;
-                        }
-
-                        &.asc>i {
-                            opacity: 1;
-                            transform: rotate(0deg);
-                        }
-
-                        &.desc>i {
-                            opacity: 1;
-                            transform: rotate(180deg);
-                        }
-
-                        &:nth-last-child(1) {
-                            cursor: unset;
-
+        >section {
+            width: 100%;
+            overflow: scroll;
+            
+            >table {
+                min-width: 100%;
+                border-collapse: collapse;
+    
+                >thead {
+                    position: sticky;
+                    top: 0;
+    
+                    >tr {
+                        border-bottom: 0.5px solid $color_text_1;
+    
+                        >th {
+                            padding: 0 $_16;
+                            line-height: $_48;
+                            font-size: $_12;
+                            white-space: nowrap;
+                            color: $text_dark;
+                            transition: 0.2s;
+                            background-color: #fff;
+                            cursor: pointer;
+    
                             @media (hover: hover) and (pointer: fine) {
-
+    
                                 &:hover {
-                                    background-color: unset;
+                                    background-color: $color_system_2;
                                 }
                             }
-                        }
-
-                        >i {
-                            margin-left: $_8;
-                            transform: rotate(90deg);
-                            transition: 0.2s;
-                            opacity: 0;
+    
+                            &:not(:first-child)::before {
+                                content: "";
+                                position: absolute;
+                                top: $_16;
+                                left: -0.5px;
+                                display: block;
+                                width: 1px;
+                                height: $_16;
+                                background-color: $color_text_4;
+                            }
+    
+                            &.asc>i {
+                                opacity: 1;
+                                transform: rotate(0deg);
+                            }
+    
+                            &.desc>i {
+                                opacity: 1;
+                                transform: rotate(180deg);
+                            }
+    
+                            &:nth-last-child(1) {
+                                cursor: unset;
+    
+                                @media (hover: hover) and (pointer: fine) {
+    
+                                    &:hover {
+                                        background-color: unset;
+                                    }
+                                }
+                            }
+    
+                            >i {
+                                margin-left: $_8;
+                                transform: rotate(90deg);
+                                transition: 0.2s;
+                                opacity: 0;
+                            }
                         }
                     }
                 }
-            }
-
-            >tbody {
-
-                >tr {
-                    border-bottom: 0.5px solid $color_text_1;
-
-                    &:nth-child(2n - 1)>td {
-                        background-color: $body_left_bg;
-                    }
-
-                    &.hide>td {
-                        color: #bfbfbf;
-                    }
-
-                    &.info>td {
-                        color: red;
-                    }
-
-                    >td {
-                        padding: 0 $_16;
-                        max-width: $_256;
-                        line-height: $_48;
-                        text-overflow: ellipsis;
-                        font-size: $_12;
-                        color: $text_dark;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        background-color: #fff;
-
-                        &:not(:first-child)::before {
-                            content: "";
-                            position: absolute;
-                            top: $_16;
-                            left: -0.5px;
-                            display: block;
-                            width: 1px;
-                            height: $_16;
-                            background-color: $color_text_4;
+    
+                >tbody {
+    
+                    >tr {
+                        border-bottom: 0.5px solid $color_text_1;
+    
+                        &:nth-child(2n - 1)>td {
+                            background-color: $body_left_bg;
                         }
-
-                        a {
-                            color: inherit;
-
-                            &::before {
-                                margin-right: $_4;
-                            }
+    
+                        &.hide>td {
+                            color: #bfbfbf;
                         }
-
-                        button {
-                            display: inline-block;
-                            vertical-align: top;
-                            margin: $_12 $_8 $_12 0;
-                            padding: 0 $_12;
-                            line-height: $_24;
-                            height: $_24;
+    
+                        &.info>td {
+                            color: red;
+                        }
+    
+                        >td {
+                            padding: 0 $_16;
+                            max-width: $_256;
+                            line-height: $_48;
+                            text-overflow: ellipsis;
                             font-size: $_12;
-                            background-color: #000;
-                            color: #fff;
-                            border: none;
-                            border-radius: $_12;
-                            transition: 0.2s;
-
-                            &:last-child {
-                                margin: $_12 0;
+                            color: $text_dark;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            background-color: #fff;
+    
+                            &:not(:first-child)::before {
+                                content: "";
+                                position: absolute;
+                                top: $_16;
+                                left: -0.5px;
+                                display: block;
+                                width: 1px;
+                                height: $_16;
+                                background-color: $color_text_4;
                             }
-
-                            &.alert {
-                                background-color: red;
-
-                                &:hover {
+    
+                            a {
+                                color: inherit;
+    
+                                &::before {
+                                    margin-right: $_4;
+                                }
+                            }
+    
+                            button {
+                                display: inline-block;
+                                vertical-align: top;
+                                margin: $_12 $_8 $_12 0;
+                                padding: 0 $_12;
+                                line-height: $_24;
+                                height: $_24;
+                                font-size: $_12;
+                                background-color: #000;
+                                color: #fff;
+                                border: none;
+                                border-radius: $_12;
+                                transition: 0.2s;
+    
+                                &:last-child {
+                                    margin: $_12 0;
+                                }
+    
+                                &.alert {
                                     background-color: red;
+    
+                                    &:hover {
+                                        background-color: red;
+                                    }
                                 }
                             }
                         }

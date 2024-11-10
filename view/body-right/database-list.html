@@ -53,7 +53,7 @@
         <section>
             <details open>
                 <summary>
-                    <span>篩選條件 (3)</span>
+                    <span>篩選條件 <i class="fa-solid fa-caret-right"></i></span>
                     <section>
                         <!-- 可以放按鈕 -->
                         <button>
@@ -136,26 +136,26 @@
                     </form>
                 </section>
             </details>
-        </section>
-        <section>
             <!-- 列表 -->
-            <table data-head="1">
-                <thead>
-                    <tr>
-                        <th :for="e in database.head">{{ e }}</th>
-                        <th>其他</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr :class="e.class" :for="e in database.list">
-                        <td :for="a in e.body" :html="a"></td>
-                        <td>
-                            <button>編輯</button>
-                            <button class="alert" :if="e.is_deleted == false">刪除</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <section>
+                <table data-head="1">
+                    <thead>
+                        <tr>
+                            <th :for="e in database.head">{{ e }}</th>
+                            <th>其他</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr :class="e.class" :for="e in database.list">
+                            <td :for="a in e.body" :html="a"></td>
+                            <td>
+                                <button>編輯</button>
+                                <button class="alert" :if="e.is_deleted == false">刪除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
         <!-- 按鈕 -->
         <footer>

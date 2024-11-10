@@ -18,4 +18,75 @@
         <section>
         </section>
     </header>
+    <!--  -->
+    <section class="body-right-article">
+        <section>
+            <!--  -->
+            <details>
+                <!--  -->
+                <summary>
+                    <span>文章資訊 <i class="fa-solid fa-caret-right"></i></span>
+                    <section>
+                        <button>
+                            <i class="fa-brands fa-firstdraft"></i>
+                            草稿
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-calendar-plus"></i>
+                            發布
+                        </button>
+                    </section>
+                </summary>
+                <!--  -->
+                <section>
+                    <form>
+                        <span>基本設定</span>
+                        <label class="_50">自訂ID
+                            <input type="text" placeholder="@username/[自訂ID]">
+                        </label>
+                        <label class="_50">分類
+                            <section>
+                                <select name="" id="">
+                                    <option value="">選擇類別</option>
+                                    <option value="">類別1</option>
+                                    <option value="">類別2</option>
+                                </select>
+                                or
+                                <input type="text" placeholder="輸入類別">
+                            </section>
+                        </label>
+                        <label>描述
+                            <section>
+                                <textarea placeholder="描述" oninput="this.nextElementSibling.innerHTML=this.value.replace(/\n/g, '<br>')"></textarea>
+                                <pre></pre>
+                            </section>
+                        </label>
+                        <label>標籤
+                            <section>
+                                <textarea placeholder="標籤" oninput="this.nextElementSibling.innerHTML=this.value.replace(/\n/g, '<br>')"></textarea>
+                                <pre></pre>
+                            </section>
+                        </label>
+                        <span>SEO 設定</span>
+                        <label>標題
+                            <input type="text" placeholder="SEO 標題">
+                        </label>
+                        <label>描述
+                            <section>
+                                <textarea placeholder="SEO 描述" oninput="this.nextElementSibling.innerHTML=this.value.replace(/\n/g, '<br>')"></textarea>
+                                <pre></pre>
+                            </section>
+                        </label>
+                    </form>
+                </section>
+                <!--  -->
+                <button>收合</button>
+            </details>
+            <!--  -->
+            <section>
+                <section class="body-right-article-editor"></section>
+                <section class="body-right-article-viewer"></section>
+            </section>
+        </section>
+    </section>
 </section>

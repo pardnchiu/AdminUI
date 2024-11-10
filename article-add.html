@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
         <!-- script -->
         <script src="https://cdn.jsdelivr.net/npm/pdquickui@0.5.4/dist/PDQuickUI.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pdmarkdownkit@1.6.0/dist/PDMarkdownKit.js"></script>
         <script src="./js/index.js"></script>
-        <script src="./js/database-list.js"></script>
     </head>
 
     <body id="body">
@@ -36,9 +36,9 @@
                         title: "管理後台",
                         is_database_list: 1,
                         left: {
-                            is_body_left_min: 0,
+                            is_body_left_min: getCookie("is_body_left_min"),
                             is_database_list: 0,
-                            is_database_add: 0,
+                            is_database_edit: 0,
                             is_article_add: 1,
                             is_folder_image: 0,
                             is_file_edit: 0,
@@ -59,7 +59,35 @@
                     event: {
                         ...default_events,
                     },
-                    next: () => {
+                    when: {
+                        rendered: _ => {
+                            const elm_editor = new PDMarkdownEditor({
+                                hotKey: 0,
+                                style: {
+                                    fill: 1,                            // 隨父元素大小調整，預設值：1
+                                    showRow: 0,                         // 顯示行數，預設：1
+                                    focus: {
+                                        backgroundColor: "#f5f8ff",   // 預設：#0000ffff
+                                    }
+                                }
+                            });
+
+                            const elm_viewer = new PDMarkdownViewer({
+                                style: {
+                                    fill: 1,           // 隨父元素大小調整，預設值：1 | true
+                                },
+                                sync: {
+                                    editor: elm_editor, // 關聯的編輯器
+                                    delay: 50,          // 更新延遲，單位ms，預設 300
+                                    scrollSync: 1,      // 與編輯器同步滾動，預設值：0 | false
+                                }
+                            });
+
+                            document.querySelector("section.body-right-article-editor").appendChild(elm_editor.body);
+                            document.querySelector("section.body-right-article-viewer").appendChild(elm_viewer.body);
+                            elm_editor.init();
+                            elm_viewer.init();
+                        }
                     }
                 });
             });

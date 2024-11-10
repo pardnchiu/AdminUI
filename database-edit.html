@@ -19,7 +19,7 @@
             <!-- 左側導覽列 -->
             <temp :path="./view/body-left.html"></temp>
             <!-- 內容 -->
-            <temp :path="./view/body-right/database-list.html"></temp>
+            <temp :path="./view/body-right/database-edit.html"></temp>
         </section>
         <script>
             document.addEventListener("DOMContentLoaded", _ => {
@@ -36,8 +36,8 @@
                         is_database_list: 1,
                         left: {
                             is_body_left_min: getCookie("is_body_left_min"),
-                            is_database_list: 1,
-                            is_database_edit: 0,
+                            is_database_list: 0,
+                            is_database_edit: 1,
                             is_article_add: 0,
                             is_folder_image: 0,
                             is_file_edit: 0,
