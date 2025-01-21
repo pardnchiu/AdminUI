@@ -1,0 +1,39 @@
+{
+    "ecma": 2022,
+    "enclose": false,
+    "keep_classnames": true,
+    "keep_fnames": true,
+    "ie8": false,
+    "nameCache": {},
+    "safari10": false,
+    "toplevel": false,
+    "mangle": {
+        "properties": {
+            "keep_quoted": false,
+            "regex": ".*"
+        }
+    },
+    "compress": {
+        "sequences": false,
+        "properties": false,
+        "dead_code": false,
+        "drop_debugger": false,
+        "conditionals": false,
+        "comparisons": false,
+        "evaluate": false,
+        "booleans": false,
+        "loops": false,
+        "unused": false,
+        "hoist_funs": false,
+        "keep_fargs": true,
+        "if_return": false,
+        "join_vars": false,
+        "collapse_vars": false,
+        "reduce_vars": false,
+        "side_effects": false,
+        "pure_getters": false,
+        "negate_iife": false,
+        "drop_console": false,
+        "passes": 1
+    }
+}

@@ -1,0 +1,141 @@
+.system-component-folder-row {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: $_16;
+    padding-top: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    width: calc((100% - $_24 * 1) / 2);
+
+    @media screen and (min-width: 480px) {
+        width: calc((100% - $_24 * 2) / 3);
+    }
+
+    @media screen and (min-width: 800px) {
+        width: calc((100% - $_24 * 3) / 4);
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: calc((100% - $_24 * 4) / 5);
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: calc((100% - $_24 * 5) / 6);
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: calc((100% - $_24 * 6) / 7);
+    }
+
+    @media screen and (min-width: 1680px) {
+        width: calc((100% - $_24 * 7) / 8);
+    }
+
+    @media screen and (min-width: 1920px) {
+        width: calc((100% - $_24 * 8) / 9);
+    }
+
+    @media (hover: hover) {
+
+        &:hover {
+            >div {
+                &::after {
+                    top: 0px;
+                    border-radius: $_4;
+                    box-shadow: 0 -4px 8px #00000034;
+                }
+
+                >div {
+                    width: 96px + 16px;
+                    clip-path: polygon(16px 2px, 0 100%, 96px 100%, 112px 2px);
+                    border-radius: $_32 $_12 $_24 $_8;
+                }
+            }
+
+            >img {
+                top: -0.5px;
+                filter: drop-shadow(0 2px 2px #0000004d);
+                -webkit-filter: drop-shadow(0 2px 2px #0000004d);
+            }
+        }
+
+        &:active {
+            >div {
+                &::after {
+                    top: -8px;
+                }
+            }
+
+            >img {
+                top: 0.5px;
+                filter: drop-shadow(0 0px 2px #0000001a);
+                -webkit-filter: drop-shadow(0 0px 2px #0000001a);
+            }
+        }
+    }
+
+    >img {
+        object-fit: contain;
+        position: relative;
+        padding: $_4;
+        width: 96px;
+        height: 96px;
+        filter: drop-shadow(0 2px 2px #00000034);
+        -webkit-filter: drop-shadow(0 2px 2px #00000034);
+        transition: 0.3s;
+    }
+
+    >div {
+        position: relative;
+        margin: $_16 0;
+        width: 96px;
+        height: 64px;
+        background-color: $color_system_7;
+        border-radius: 0 $_8 $_8 $_8;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -7.5px;
+            width: 40px;
+            height: 8px;
+            background-color: $color_system_7;
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 80% 0%);
+            border-radius: $_8 0 0 0;
+        }
+
+        &::after {
+            content: "";
+            z-index: 0;
+            position: absolute;
+            top: 8px;
+            left: 6px;
+            width: 90px;
+            height: 56px;
+            background-color: #fff;
+            border-radius: $_8;
+            transition: 0.3s;
+        }
+
+        >div {
+            z-index: 1;
+            position: absolute;
+            top: 8px;
+            width: 96px;
+            height: 56px;
+            background-color: $color_system_9;
+            border-radius: $_8;
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+            transition: 0.1s;
+        }
+    }
+
+    >strong {
+        font-size: $_14;
+        font-weight: 500;
+    }
+}

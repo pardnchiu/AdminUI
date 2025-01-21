@@ -1,0 +1,167 @@
+>section.system-page-folder {
+    flex-grow: 1;
+    width: 100%;
+    border-top: 1px solid $body_left_border;
+    border-bottom: 1px solid $body_left_border;
+
+    >section {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        // height: 100%;
+        border-bottom: 0.5px solid $color_text_1;
+        background-color: $color_system_1;
+
+        >header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: $_16;
+            padding: 0 $_16;
+            line-height: $_48;
+            font-weight: 500;
+            background-color: #fff;
+            color: $color_text_9;
+            border-bottom: 0.5px solid $color_text_1;
+            list-style-type: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+
+            &::-webkit-details-marker,
+            &::marker {
+                display: none;
+            }
+
+            >section {
+                display: flex;
+                align-items: center;
+                gap: $_12;
+            }
+
+            span {
+                flex-shrink: 0;
+
+                >b {
+                    margin-left: 0.5rem;
+                    font-weight: 500;
+                }
+
+                >i {
+                    margin-left: $_4;
+                    transition: 0.2s;
+                }
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                padding: 0 $_12;
+                line-height: $_32;
+                font-size: $_12;
+                background-color: $color_system_1;
+                color: $color_text_7;
+                border-radius: $_12;
+                transition: 0.2s;
+
+                gap: 0;
+
+                @media screen and (min-width: $_480) {
+                    gap: $_4;
+                }
+
+                @media (hover: hover) {
+
+                    &:hover {
+                        background-color: $color_system_2;
+                        color: $color_text_9;
+                    }
+                }
+
+                i {
+                    width: 0;
+                    text-align: center;
+                    opacity: 0;
+                    transition: 0.3s;
+
+                    @media screen and (min-width: $_480) {
+                        width: $_16;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        >section {
+            display: flex;
+            flex-flow: row wrap;
+            gap: $_24;
+            padding: $_24;
+            width: 100%;
+            overflow: scroll;
+
+            @import "./system-component-folder-row";
+        }
+
+        >button {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: inherit;
+            text-align: center;
+        }
+
+        @import "./system-component-form";
+
+        >section {
+            display: flex;
+            flex-grow: 1;
+            width: 100%;
+            overflow: scroll;
+
+            // &:has(.pd-md-viewer)>section.system-page-article-editor {
+            //     background-color: $color_system_1;
+            // }
+
+            >section {
+                flex: 1;
+                background-color: #fff;
+            }
+        }
+    }
+
+    >footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $_12;
+        margin-top: -0.5px;
+        height: $_40;
+        border-top: 0.5px solid $color_text_1;
+
+        >section {
+            display: flex;
+            align-items: center;
+            gap: $_8;
+
+            a {
+                font-size: $_12;
+            }
+
+            p {
+                font-size: $_12;
+            }
+
+            select {
+                font-size: $_12;
+            }
+        }
+    }
+}

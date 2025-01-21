@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>(Demo) Folder Viewer</title>
+
+        <!-- 預連接 -->
+        <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- 預加載 Google Fonts -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Noto+Sans+TC:wght@400&display=swap" as="style" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Noto+Sans+TC:wght@400&display=swap" rel="stylesheet" crossorigin="anonymous">
+
+        <!-- 預加載 Font Awesome 圖示 -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous">
+
+        <!-- 預加載 QuickUI 前端框架 -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/@pardnchiu/quickui@0.6.6/dist/QuickUI.js" as="script" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@pardnchiu/quickui@0.6.6/dist/QuickUI.js" defer crossorigin="anonymous"></script>
+
+        <!-- 本地資源 -->
+        <link rel="stylesheet" href="/dist/system.css">
+        <script src="/dist/system.js"></script>
+    </head>
+
+    <body id="body">
+        <section>
+            <!-- * 左側導覽列 (純範例用，請直接透過後端實現) -->
+            <temp :path="/page/component/demo-left-tab.html"></temp>
+            <!-- 內容 -->
+            <section class="system-block-body-right">
+                <!-- * 頂部導覽列 (純範例用，請直接透過後端實現) -->
+                <temp :path="/page/component/demo-right-nav.html"></temp>
+                <!-- -->
+                <header>
+                    <strong>(範例) 檔案管理</strong>
+                    <section>
+                    </section>
+                </header>
+                <!--  -->
+                <section class="system-page-folder">
+                    <section>
+                        <!-- * 檔案夾導覽列 (純範例用，請直接從後端渲染) -->
+                        <header :if="isChild">
+                            <span>目前位置: {{ path }}</span>
+                            <section></section>
+                        </header>
+                        <header :else>
+                            <span>目前位置: {{ path }}</span>
+                            <section>
+                                <button>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    刪除
+                                </button>
+                            </section>
+                        </header>
+                        <!-- * 檔案夾內容 (純範例用，請直接從後端渲染) -->
+                        <section>
+                            <a :for="e in items" class="system-component-folder-row" :href="e.path">
+                                <div :if="e.type == folder">
+                                    <div></div>
+                                </div>
+                                <img :else :src="e.src" alt="">
+                                <strong>{{ e.name }}</strong>
+                            </a>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", _ => {
+                const url = new URL(location.href);
+                const query = url.searchParams;
+                const path = query.get("path");
+                let previous = "/static/demo";
+                let items = [];
+
+                // * 純範例用，請直接透過後端實現
+                if (path == "/static/demo") {
+                    items = [
+                        {
+                            type: "folder",
+                            path: "/page/demo-folder.html?path=/static/demo/image",
+                            src: "",
+                            name: "image"
+                        },
+                        {
+                            type: "application/json",
+                            path: "/page/demo-json.html?path=/static/demo/demo.json",
+                            src: "/dist/document.png",
+                            name: "demo.json"
+                        },
+                        {
+                            type: "application/json",
+                            path: "/page/demo-md-viewer.html?path=/static/demo/demo.md",
+                            src: "/dist/document.png",
+                            name: "demo.md"
+                        },
+                        {
+                            type: "application/json",
+                            path: "/page/demo-text.html?path=/static/demo/demo.txt",
+                            src: "/dist/document.png",
+                            name: "demo.txt"
+                        },
+                    ]
+                }
+                else if (path == "/static/demo/image") {
+                    items = [
+                        {
+                            type: "folder",
+                            path: "/page/demo-folder.html?path=/static/demo/image/sample",
+                            src: "",
+                            name: "sample"
+                        },
+                        {
+                            type: "image/jpg",
+                            path: "/page/demo-media.html?path=/static/demo/image/sample-0.jpg",
+                            src: "/static/demo/image/sample-0.jpg",
+                            name: "sample-0.jpg"
+                        },
+                        {
+                            type: "image/jpg",
+                            path: "/page/demo-media.html?path=/static/demo/image/sample-1.jpg",
+                            src: "/static/demo/image/sample-1.jpg",
+                            name: "sample-1.jpg"
+                        },
+                        {
+                            type: "image/jpg",
+                            path: "/page/demo-media.html?path=/static/demo/image/sample-2.jpg",
+                            src: "/static/demo/image/sample-2.jpg",
+                            name: "sample-2.jpg"
+                        },
+                        {
+                            type: "video",
+                            path: "/page/demo-media.html?type=video&path=/static/demo/image/video.mp4",
+                            src: "/dist/video.svg",
+                            name: "video.mp4"
+                        }
+                    ]
+                }
+                else if (path == "/static/demo/image/sample") {
+                    items = [
+                        {
+                            type: "image/jpg",
+                            path: "/page/demo-media.html?path=/static/demo/image/sample/sample-3.jpg",
+                            src: "/static/demo/image/sample/sample-3.jpg",
+                            name: "sample-3.jpg"
+                        },
+                        {
+                            type: "image/jpg",
+                            path: "/page/demo-media.html?path=/static/demo/image/sample/sample-4.jpg",
+                            src: "/static/demo/image/sample/sample-4.jpg",
+                            name: "sample-4.jpg"
+                        },
+                        {
+                            type: "image/jpg",
+                            path: "/page/demo-media.html?path=/static/demo/image/sample/sample-5.jpg",
+                            src: "/static/demo/image/sample/sample-5.jpg",
+                            name: "sample-5.jpg"
+                        }
+                    ]
+                }
+
+                demo_datas.left.is_demo_folder = 1;
+
+                page = new QUI({
+                    id: "body",
+                    data: {
+                        // * 純範例用，請直接透過後端實現
+                        ...demo_datas,
+                        isChild: path === previous,
+                        items,
+                        path
+                    },
+                    event: {
+                        ...system_events,
+                    }
+                });
+            });
+
+        </script>
+    </body>
+
+</html>

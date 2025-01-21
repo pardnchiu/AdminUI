@@ -1,0 +1,149 @@
+form.system-component-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    align-items: flex-start;
+    gap: $_24;
+    padding: 0 $_16;
+    overflow: scroll hidden;
+
+    span {
+        padding: $_12 0 $_4;
+        width: 100%;
+        font-size: $_14;
+        border-bottom: 1px solid $body_left_border;
+
+        &:nth-child(1) {
+            padding-top: $_4;
+        }
+    }
+
+    label {
+        display: flex;
+        flex-flow: column;
+        gap: $_4;
+        width: 100%;
+        font-size: $_12;
+
+        &::before {
+            content: attr(title);
+        }
+
+        &:has(textarea[data-required="1"])::before,
+        &:has(input[data-required="1"])::before {
+            content: "*" attr(title) " (必填)";
+            color: #800000;
+        }
+
+        &::after {
+            content: attr(data-hint);
+            padding: 0 $_2;
+            font-size: $_10;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        &[data-error="1"]::after {
+            color: red;
+            opacity: 1;
+        }
+
+        &[data-message]:not([data-message=""])::after {
+            content: attr(data-message);
+        }
+
+        &._50 {
+            width: calc(50% - $_12);
+        }
+
+        >section {
+            display: flex;
+            align-items: center;
+            gap: $_12;
+
+            &:has(input[type="radio"]),
+            &:has(input[type="checkbox"]) {
+                flex-flow: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+
+            &:not(:has(input[type="radio"])):not(:has(input[type="checkbox"])) {
+
+                * {
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+    input,
+    textarea {
+        caret-color: blue;
+    }
+
+    select,
+    input {
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding: 0 $_12;
+        line-height: $_32;
+        font-size: $_14;
+        border-radius: $_8;
+        background-color: #fff;
+        color: $color_text_9;
+        border: 0.5px solid $color_text_1;
+
+        &[type="checkbox"] {
+            border-radius: 0;
+        }
+
+        &[type="radio"],
+        &[type="checkbox"] {
+            &::after {
+                content: attr(title);
+                position: absolute;
+                top: -10px;
+                left: 20px;
+                font-size: $_14;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    pre {
+        position: relative;
+        z-index: 0;
+        padding: 0 $_12;
+        line-height: $_32;
+        min-height: $_32;
+        font-size: $_14;
+        border-radius: $_8;
+        background-color: #fff;
+    }
+
+    textarea {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: inherit;
+        width: inherit;
+        height: inherit;
+        resize: none;
+        color: transparent;
+        background-color: transparent;
+        border: none;
+        overflow: hidden;
+        padding: 0 $_12;
+        line-height: $_32;
+        min-height: $_32;
+        font-size: $_14;
+        border-radius: $_8;
+        border: 0.5px solid $color_text_1;
+    }
+}
