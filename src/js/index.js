@@ -1,7 +1,7 @@
 let page;
 
 const system_events = {
-    body_left_show: function (e) {
+    body_left_show: e => {
         const dom_target = document.querySelector("section.system-block-body-left");
 
         if (dom_target == null) {
@@ -10,7 +10,7 @@ const system_events = {
 
         dom_target.dataset.show = parseInt(dom_target.dataset.show) ? 0 : 1;
     },
-    body_left_type: function (e) {
+    body_left_type: e => {
         const dom_target = document.querySelector("section.system-block-body-left");
 
         if (dom_target == null) {
@@ -36,22 +36,3 @@ const system_events = {
         };
     },
 };
-
-const demo_events = {
-    show: function () {
-        const isShow = this.$parent(0).$$class("show");
-        this.__class(`fa-solid ${isShow ? "fa-eye-slash" : "fa-eye"}`);
-        this.$pre(0).$child(0).type = isShow ? "password" : "text";
-        this.$parent(0).$$class_(isShow, "show");
-    },
-    login: function () {
-        page.dom.$child(0)._class("show");
-
-        setTimeout(() => {
-            page.data.is_guest = false;
-        }, 1000);
-    },
-    logout: function () {
-        page.data.is_guest = true;
-    },
-}

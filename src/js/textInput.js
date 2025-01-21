@@ -99,7 +99,6 @@ const textInput = e => {
             var isMin = min != null && _this.value.length;
 
             if (parent.dataset.error === "1" && isMin) {
-                console.log(parent.dataset.error, isMin, min, _this.value.length, parent.dataset.error === "1" && isMin, parent.dataset.message)
                 parent.dataset.message = parent.dataset.message + ((_this.value.length < min) ? (" / 最小長度為 " + min) : "")
             }
             else if (isMin) {

@@ -31,10 +31,15 @@
         <!-- 本地資源 -->
         <link rel="stylesheet" href="/dist/system.css">
         <script src="/dist/system.js"></script>
+        <script src="/dist/demo.js"></script>
     </head>
 
-    <body id="body">
-        <section>
+    <body id="body" :animation="fade-in">
+        <!-- * 純範例用，請直接透過後端實現 -->
+        <section :if="is_guest" class="login">
+            <temp :path="/page/component/demo-login.html"></temp>
+        </section>
+        <section :else>
             <!-- * 左側導覽列 (純範例用，請直接透過後端實現) -->
             <temp :path="/page/component/demo-left-tab.html"></temp>
             <!-- 內容 -->
@@ -152,6 +157,8 @@
                         ...demo_datas,
                     },
                     event: {
+                        // * 純範例用，請直接透過後端實現
+                        ...demo_events,
                         ...system_events,
                         textInput,
                         expand: e => {
@@ -231,7 +238,7 @@
 - [Fontawesome 圖示](https://fontawesome.com): 基本圖標`,
                                 showRow: 0,
                                 hotKey: 1,                              // 啟用快捷鍵，預設為 1
-                                // preventRefresh: 1,                      // 防止頁面重整，預設值：0
+                                // preventRefresh: 1,                   // 防止頁面重整，預設值：0
                                 tabPin: 1,                              // 啟用 Tab 縮排，預設值：0 (關閉)
                                 wrap: 1,                                // 啟用文字自動換行，預設值：1 (開啟)
                                 autoSave: 1,                            // 自動儲存，預設值：1 (開啟)
