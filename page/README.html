@@ -34,7 +34,7 @@
         <script src="/dist/demo.js"></script>
     </head>
 
-    <body id="body">
+    <body id="body" :animation="fade-in">
         <!-- * 純範例用，請直接透過後端實現 -->
         <section :if="is_guest" class="login">
             <temp :path="/page/component/demo-login.html"></temp>

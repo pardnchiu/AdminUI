@@ -14,3 +14,18 @@
 ### 第三方專案
 
 - [Fontawesome 圖示](https://fontawesome.com): 基本圖標
+
+### 範例圖片
+
+- [pixabay.com/photos/deer-hokkaido-sika-deer-sika-deer-9214838/](https://pixabay.com/photos/deer-hokkaido-sika-deer-sika-deer-9214838/)
+    ![](/static/demo/image/sample-0.jpg)
+- [pixabay.com/photos/green-tree-python-python-snake-9295182/](https://pixabay.com/photos/green-tree-python-python-snake-9295182/)
+    ![](/static/demo/image/sample-1.jpg)
+- [pixabay.com/photos/japancontest-japan-osaka-urban-9175030/](https://pixabay.com/photos/japancontest-japan-osaka-urban-9175030/)
+    ![](/static/demo/image/sample-2.jpg)
+- [pixabay.com/photos/architecture-building-skyscraper-5585737/](https://pixabay.com/photos/architecture-building-skyscraper-5585737/)
+    ![](/static/demo/image/sample/sample-3.jpg)
+- [pixabay.com/photos/bus-school-bus-vehicle-8142339/](https://pixabay.com/photos/bus-school-bus-vehicle-8142339/)
+    ![](/static/demo/image/sample/sample-4.jpg)
+- [pixabay.com/photos/empire-state-building-new-york-city-6675010/](https://pixabay.com/photos/empire-state-building-new-york-city-6675010/)
+    ![](/static/demo/image/sample/sample-5.jpg)
