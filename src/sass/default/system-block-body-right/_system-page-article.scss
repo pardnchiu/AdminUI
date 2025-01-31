@@ -152,6 +152,16 @@
                             background-color: $color_system_2;
                             color: $color_text_9;
                         }
+
+                        &.alert:hover {
+                            background-color: $color_alert_2;
+                            color: $color_alert_text_9;
+                        }
+                    }
+
+                    &.alert {
+                        background-color: $color_alert_1;
+                        color: $color_alert_text_7;
                     }
 
                     i {

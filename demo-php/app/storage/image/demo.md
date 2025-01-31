@@ -1,6 +1,3 @@
-純文字檔
---------------------
-
 [![](https://skillicons.dev/icons?i=github)](https://github.com/pardnchiu/web-admin-20241110)
 
 # 基本款後台範例
@@ -21,16 +18,14 @@
 ### 範例圖片
 
 - [pixabay.com/photos/deer-hokkaido-sika-deer-sika-deer-9214838/](https://pixabay.com/photos/deer-hokkaido-sika-deer-sika-deer-9214838/)
-    ![](/static/demo/image/sample-0.jpg)
+    ![](/demo-php/app/storage/image/sample-0.jpg)
 - [pixabay.com/photos/green-tree-python-python-snake-9295182/](https://pixabay.com/photos/green-tree-python-python-snake-9295182/)
-    ![](/static/demo/image/sample-1.jpg)
+    ![](/demo-php/app/storage/image/sample-1.jpg)
 - [pixabay.com/photos/japancontest-japan-osaka-urban-9175030/](https://pixabay.com/photos/japancontest-japan-osaka-urban-9175030/)
-    ![](/static/demo/image/sample-2.jpg)
+    ![](/demo-php/app/storage/image/sample-2.jpg)
 - [pixabay.com/photos/architecture-building-skyscraper-5585737/](https://pixabay.com/photos/architecture-building-skyscraper-5585737/)
-    ![](/static/demo/image/sample/sample-3.jpg)
+    ![](/demo-php/app/storage/image/sample/sample-3.jpg)
 - [pixabay.com/photos/bus-school-bus-vehicle-8142339/](https://pixabay.com/photos/bus-school-bus-vehicle-8142339/)
-    ![](/static/demo/image/sample/sample-4.jpg)
+    ![](/demo-php/app/storage/image/sample/sample-4.jpg)
 - [pixabay.com/photos/empire-state-building-new-york-city-6675010/](https://pixabay.com/photos/empire-state-building-new-york-city-6675010/)
-    ![](/static/demo/image/sample/sample-5.jpg)
-
---------------------
+    ![](/demo-php/app/storage/image/sample/sample-5.jpg)

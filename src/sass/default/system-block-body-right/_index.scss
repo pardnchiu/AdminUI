@@ -58,6 +58,9 @@
         width: 100%;
 
         strong {
+            display: flex;
+            align-items: center;
+            gap: $_16;
             font-size: $_32;
             font-weight: 500;
         }
@@ -68,9 +71,11 @@
             gap: $_16;
         }
 
+        a,
         button {
             padding: 0 $_16;
             line-height: $_32;
+            text-decoration: none;
             font-size: $_14;
             background-color: $color_system_2;
             color: $color_text_7;

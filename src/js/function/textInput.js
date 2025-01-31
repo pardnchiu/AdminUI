@@ -1,6 +1,6 @@
 let textInputErrorTimer;
 
-const textInput = e => {
+function textInput(e) {
     const _this = e.target;
     const parent = _this.parentElement.parentElement;
     const type = _this.dataset.type ?? _this.type ?? "text";
@@ -24,8 +24,6 @@ const textInput = e => {
                     parent.dataset.error = 0;
                 }, 1000);
             };
-
-            _this.nextElementSibling.innerHTML = _this.value.replace(/\n/g, '<br>');
             break;
         case "account":
             var regex = /[^\w]/g;
@@ -106,6 +104,10 @@ const textInput = e => {
                 parent.dataset.message = (_this.value.length < min) ? ("最小長度為 " + min) : ""
             }
             break;
+    };
+
+    if (_this.tagName === "TEXTAREA" && _this.nextElementSibling != null) {
+        _this.nextElementSibling.innerHTML = _this.value.replace(/\n/g, '<br>');
     }
 }
 const hasgtagKeyup = e => {

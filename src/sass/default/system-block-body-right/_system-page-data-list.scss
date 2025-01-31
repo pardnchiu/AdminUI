@@ -2,7 +2,7 @@
     width: 100%;
     border-top: 1px solid $body_left_border;
     border-bottom: 1px solid $body_left_border;
-    
+
     >section {
         width: 100%;
 
@@ -202,16 +202,6 @@
                                 background-color: $color_text_4;
                             }
 
-                            &.asc>i {
-                                opacity: 1;
-                                transform: rotate(0deg);
-                            }
-
-                            &.desc>i {
-                                opacity: 1;
-                                transform: rotate(180deg);
-                            }
-
                             &:nth-last-child(1) {
                                 cursor: unset;
 
@@ -225,9 +215,8 @@
 
                             >i {
                                 margin-left: $_8;
-                                transform: rotate(90deg);
                                 transition: 0.2s;
-                                opacity: 0;
+                                pointer-events: none;
                             }
                         }
                     }
@@ -288,8 +277,8 @@
                                 line-height: $_24;
                                 height: $_24;
                                 font-size: $_12;
-                                background-color: #000;
-                                color: #fff;
+                                background-color: $color_system_1;
+                                color: $color_text_7;
                                 border: none;
                                 border-radius: $_12;
                                 transition: 0.2s;
@@ -299,10 +288,20 @@
                                 }
 
                                 &.alert {
-                                    background-color: red;
+                                    background-color: $color_alert_1;
+                                    color: $color_alert_text_7;
+                                }
+
+                                @media (hover: hover) {
 
                                     &:hover {
-                                        background-color: red;
+                                        background-color: $color_system_3;
+                                        color: $color_text_9;
+                                    }
+
+                                    &.alert:hover {
+                                        background-color: $color_alert_3;
+                                        color: $color_alert_text_9;
                                     }
                                 }
                             }

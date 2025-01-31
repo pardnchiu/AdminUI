@@ -1,19 +1,23 @@
-function addCookie(key, body, expire) {
+function addCookie(targetKey = "", body, expireSec) {
+    targetKey = String(targetKey).trim();
 
-    if (!{ string: 1, number: 1 }[typeof key] || String(key).trim().length < 1 || body == null) {
+    if (typeof targetKey !== "string" || targetKey.length < 1 || body == null) {
         return;
     };
 
-    key = encodeURIComponent(key);
-    expire = (typeof expire === "number" ? expire : 3600) * 1000;
+    targetKey = encodeURIComponent(targetKey);
+    expireSec = (typeof expireSec === "number" ? expireSec : 3600) * 1000;
 
-    const now_date = Date.now();
-    const date = new Date(now_date + expire);
+    const dateNow = Date.now();
+    const date = new Date(dateNow + expireSec);
 
-    body = typeof body === "object" ? JSON.stringify(body).trim() : String(body).trim();
-    body = encodeURIComponent(body);
+    body = encodeURIComponent(
+        typeof body === "object"
+            ? JSON.stringify(body).trim()
+            : String(body).trim()
+    );
 
-    document.cookie = `${key}=${body}; expires=${date.toUTCString()}; path=/;`;
+    document.cookie = `${targetKey}=${body}; expires=${date.toUTCString()}; path=/`;
 
     return document.cookie;
 };
