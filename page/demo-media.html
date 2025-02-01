@@ -29,8 +29,8 @@
         <script src="https://cdn.jsdelivr.net/npm/@pardnchiu/flexplyr@2.2.7/dist/FlexPlyr.js" defer crossorigin="anonymous"></script>
 
         <!-- 本地資源 -->
-        <link rel="stylesheet" href="/dist/system.css">
-        <script src="/dist/system.js"></script>
+        <link rel="stylesheet" href="/dist/AdminUI.css">
+        <script src="/dist/AdminUI.js"></script>
         <script src="/dist/demo.js"></script>
     </head>
 
@@ -93,36 +93,18 @@
                             }
                             else {
                                 const dom = new FPlyr({
-                                    // Optional: Specify the element to replace with the player (element ID)
-                                    // If not specified, manually append dom.body to the view
                                     id: "Fply",
-
-                                    // Required: Media source configuration, choose one of the options below
                                     video: path,
-                                    // audio: "[audio source]",
-                                    // vimeo: "[Vimeo ID]",
-                                    // youtube: "[YouTube ID]"
-
-                                    // Optional: Playback settings
                                     option: {
-                                        // Whether to show the slider, default is true
                                         showThumb: true,
-
-                                        // Control panel style, e.g., "minimal" or "classic"
                                         panelType: "minimal",
-
-                                        // Control panel buttons, choose functions to display
                                         panel: [
                                             "play", "progress", "time", "timeMini",
                                             "volume", "volumeMini", "rate", "full"
                                         ],
-                                        // Default volume level
                                         volume: 100,
-                                        // Default mute setting
                                         mute: false
                                     },
-
-                                    // Optional: Event listeners to monitor specific events during playback
                                     when: {
                                         ready: function () {
                                             console.log("Player is ready");
