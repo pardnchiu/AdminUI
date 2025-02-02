@@ -19,11 +19,6 @@
         <section class="system-block-body-right">
             <!--  -->
             <?php include __DIR__ . "/../components/RightNav.php"; ?>
-            <!-- -->
-            <header>
-                <strong>檔案夾</strong>
-                <section></section>
-            </header>
             <!--  -->
             <section class="system-page-folder">
                 <section>

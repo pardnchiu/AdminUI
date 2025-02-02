@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>(Demo) Article Editor</title>
+        <title>文章撰寫 - AdminUI 靜態範例</title>
 
         <!-- 預連接 -->
         <link rel="preconnect" href="https://cdn.jsdelivr.net/">
@@ -31,24 +31,24 @@
         <!-- 本地資源 -->
         <link rel="stylesheet" href="/dist/AdminUI.css">
         <script src="/dist/AdminUI.js"></script>
-        <script src="/dist/demo.js"></script>
+        <script src="/static/js/demo.js"></script>
     </head>
 
     <body id="body" :animation="fade-in">
-        <!-- * 純範例用，請直接透過後端實現 -->
+        <!-- * 純範例用，請直接透過後端渲染 -->
         <section :if="is_guest" class="login">
             <temp :path="/page/component/demo-login.html"></temp>
         </section>
         <section :else>
-            <!-- * 左側導覽列 (純範例用，請直接透過後端實現) -->
+            <!-- * 左側導覽列 (純範例用，請直接透過後端渲染) -->
             <temp :path="/page/component/demo-left-tab.html"></temp>
             <!-- 內容 -->
             <section class="system-block-body-right">
-                <!-- * 頂部導覽列 (純範例用，請直接透過後端實現) -->
+                <!-- * 頂部導覽列 (純範例用，請直接透過後端渲染) -->
                 <temp :path="/page/component/demo-right-nav.html"></temp>
                 <!-- -->
                 <header>
-                    <strong>(範例) 文章編輯</strong>
+                    <strong>文章撰寫</strong>
                     <section>
                     </section>
                 </header>
@@ -147,17 +147,17 @@
         <script>
             document.addEventListener("DOMContentLoaded", _ => {
 
-                // * 純範例用，請直接透過後端實現
+                // * 純範例用，請直接透過後端渲染
                 demo_datas.left.is_demo_article_editor = 1;
 
                 page = new QUI({
                     id: "body",
                     data: {
-                        // * 純範例用，請直接透過後端實現
+                        // * 純範例用，請直接透過後端渲染
                         ...demo_datas,
                     },
                     event: {
-                        // * 純範例用，請直接透過後端實現
+                        // * 純範例用，請直接透過後端渲染
                         ...demo_events,
                         ...system_events,
                         textInput,
@@ -222,7 +222,7 @@
                     },
                     when: {
                         rendered: async _ => {
-                            // * 純範例用，請直接透過後端實現
+                            // * 純範例用，請直接透過後端渲染
                             let text;
                             await fetch("/README.md")
                                 .then(response => response.text())

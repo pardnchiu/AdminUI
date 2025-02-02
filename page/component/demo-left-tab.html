@@ -23,7 +23,7 @@
             </a>
             <a href="/page/demo-data-editor.html" title="前往資料新增/修改" :data-selected="left.is_database_edit">
                 <i class="fa-solid fa-plus-circle"></i>
-                <span>資料新增/修改</span>
+                <span>資料修改</span>
             </a>
             <a href="/page/demo-article-editor.html" title="前往文章撰寫" :data-selected="left.is_demo_article_editor">
                 <i class="fa-solid fa-pen"></i>
@@ -39,7 +39,7 @@
             <i class="fa-solid fa-chevron-right"></i>
         </p>
         <section data-row="5">
-            <a href="/page/demo-folder.html?path=/static/demo" title="前往檔案管理" :data-selected="left.is_demo_folder">
+            <a href="/page/demo-folder.html?path=/demo/app/storage/demo" title="前往檔案管理" :data-selected="left.is_demo_folder">
                 <i class="fa-solid fa-folder-open"></i>
                 <span>檔案管理</span>
             </a>
@@ -49,7 +49,7 @@
             </a>
             <a href="/page/demo-md-viewer.html?path=/demo/app/storage/demo/demo.md" title="前往 MD 檢視器" :data-selected="left.is_demo_md_viewer">
                 <i class="fa-brands fa-markdown"></i>
-                <span>MD 檢視器</span>
+                <span>Markdown 文檔</span>
             </a>
             <a href="/page/demo-text.html?path=/demo/app/storage/demo/demo.txt" title="前往文檔編輯" :data-selected="left.is_demo_text">
                 <i class="fa-solid fa-file"></i>
@@ -99,11 +99,11 @@
             <i class="fa-solid fa-chevron-right"></i>
         </p>
         <section data-row="2">
-            <a href="/page/README.html" :data-selected="left.is_README">
+            <a href="/page/demo-md-viewer.html?path=/README.md" :data-selected="left.is_README">
                 <i class="fa-brands fa-readme"></i>
                 <span>Readme</span>
             </a>
-            <a href="/page/LICENSE.html" :data-selected="left.is_LICENSE">
+            <a href="/page/demo-md-viewer.html?path=/LICENSE" :data-selected="left.is_LICENSE">
                 <i class="fa-solid fa-balance-scale"></i>
                 <span>License</span>
             </a>

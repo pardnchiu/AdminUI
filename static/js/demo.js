@@ -7,7 +7,7 @@ let demo_datas = {
         // 用於綁定 ':model'
         password: "",
     },
-    title: "PARDN 管理後台",
+    title: "AdminUI 靜態範例",
     left: {
         is_body_left_min: getCookie("is_body_left_min") || 0,
         is_database_list: 0,
@@ -19,18 +19,13 @@ let demo_datas = {
     },
 };
 
+// * 純範例用，請直接透過後端實現
 const demo_events = {
-    show: e => {
-        const _this = e.target;
-        const isShow = _this.parentElement.dataset.show === "1";
-        _this.className = `fa-solid ${isShow ? "fa-eye-slash" : "fa-eye"}`;
-        // this.$pre(0).$child(0).type = isShow ? "password" : "text";
-        _this.previousElementSibling.children[0].type = isShow ? "password" : "text";
-        _this.parentElement.dataset.show = isShow ? 0 : 1;
-    },
     auth_login: e => {
         e.target.parentElement.dataset.show = 1;
+
         addCookie("is_auth", 1);
+
         setTimeout(() => {
             location.reload();
         }, 500);

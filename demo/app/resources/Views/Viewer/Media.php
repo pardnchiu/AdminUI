@@ -19,11 +19,6 @@
         <section class="system-block-body-right">
             <!--  -->
             <?php include __DIR__ . "/../components/RightNav.php"; ?>
-            <!-- -->
-            <header>
-                <strong><?php echo $is_media ? "影音" : "圖片"; ?></strong>
-                <section></section>
-            </header>
             <!--  -->
             <section class="system-page-media">
                 <section>

@@ -19,12 +19,6 @@
         <section class="system-block-body-right">
             <!--  -->
             <?php include __DIR__ . "/../components/RightNav.php"; ?>
-            <!-- -->
-            <header>
-                <strong>文檔編輯</strong>
-                <section>
-                </section>
-            </header>
             <!--  -->
             <section class="system-page-text">
                 <section>
@@ -54,7 +48,10 @@
     </section>
     <script>
         document.addEventListener("DOMContentLoaded", async _ => {
-            let text = <?php echo json_encode($text ?? "", JSON_UNESCAPED_UNICODE); ?>;
+            let text = <?php
+                $text = htmlspecialchars($text ?? "", ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                echo json_encode($text, JSON_UNESCAPED_UNICODE);
+            ?>;
             page = new QUI({
                 id: "body",
                 data: {

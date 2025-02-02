@@ -5,11 +5,11 @@ function getCookie(targetKey = "") {
         return;
     };
 
-    const keyRegexp = new RegExp(targetKey + "=([^ ;]+)?");
-    const matchResults = document.cookie.match(keyRegexp) || [];
-    const length = matchResults.length;
+    const regexp = new RegExp(targetKey + "=([^ ;]+)?");
+    const match = document.cookie.match(regexp) || [];
+    const length = match.length;
 
-    let targetValue = matchResults[length - 1];
+    let targetValue = match[length - 1];
 
     if (length < 1 || targetValue == null) {
         return;

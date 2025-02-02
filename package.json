@@ -1,17 +1,17 @@
 {
     "name": "@pardnchiu/adminui",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "AdminUI is a simple backend management system template with an intuitive interface and a modular architecture, supporting custom extensions, enabling developers to quickly build and customize backend management platforms.",
     "main": "",
     "scripts": {
         "build:debug": "npx terser src/js/*.js src/js/**/*.js -o dist/AdminUI.debug.js",
-        "build:min": "npx terser src/js/*.js src/js/**/*.js -c -m -o dist/AdminUI.js --config-file terser.config.json --name-cache terser.cache.json",
-        "build:demo-php": "npx terser src/js/*.js src/js/**/*.js -c -m -o demo-php/app/public/js/AdminUI.js --config-file terser.config.json --name-cache terser.cache.json",
-        "build:once": "npm-run-all build:debug build:min build:demo-php",
+        "build:min": "npx terser src/js/*.js src/js/**/*.js -c -m -o dist/AdminUI.js --config-file terser.config.json",
+        "build:demo": "npx terser src/js/*.js src/js/**/*.js -c -m -o demo/app/public/js/AdminUI.js --config-file terser.config.json",
+        "build:once": "npm-run-all build:debug build:min build:demo",
         "build": "chokidar src/js/*.js src/js/**/*.js -c 'npm run build:once'",
         "sass:dist": "sass src/sass/:dist/ -w --style compressed --no-source-map",
-        "sass:demo-php": "sass src/sass/:demo-php/app/public/css -w --style compressed --no-source-map",
-        "sass": "npm-run-all -p sass:dist sass:demo-php",
+        "sass:demo": "sass src/sass/:demo/app/public/css -w --style compressed --no-source-map",
+        "sass": "npm-run-all -p sass:dist sass:demo",
         "error:php": "lnav -r demo/app/storage/logs/error.log",
         "debug:php": "lnav -r demo/app/storage/logs/debug.log"
     },

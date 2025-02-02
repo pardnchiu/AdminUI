@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>(Demo) JSON Editor</title>
+        <title>JSON 編輯 - AdminUI 靜態範例</title>
 
         <!-- 預連接 -->
         <link rel="preconnect" href="https://cdn.jsdelivr.net/">
@@ -31,27 +31,21 @@
         <!-- 本地資源 -->
         <link rel="stylesheet" href="/dist/AdminUI.css">
         <script src="/dist/AdminUI.js"></script>
-        <script src="/dist/demo.js"></script>
+        <script src="/static/js/demo.js"></script>
     </head>
 
     <body id="body" :animation="fade-in">
-        <!-- * 純範例用，請直接透過後端實現 -->
+        <!-- * 純範例用，請直接透過後端渲染 -->
         <section :if="is_guest" class="login">
             <temp :path="/page/component/demo-login.html"></temp>
         </section>
         <section :else>
-            <!-- * 左側導覽列 (純範例用，請直接透過後端實現) -->
+            <!-- * 左側導覽列 (純範例用，請直接透過後端渲染) -->
             <temp :path="/page/component/demo-left-tab.html"></temp>
             <!-- 內容 -->
             <section class="system-block-body-right">
-                <!-- * 頂部導覽列 (純範例用，請直接透過後端實現) -->
+                <!-- * 頂部導覽列 (純範例用，請直接透過後端渲染) -->
                 <temp :path="/page/component/demo-right-nav.html"></temp>
-                <!-- -->
-                <header>
-                    <strong>(範例) JSON 編輯</strong>
-                    <section>
-                    </section>
-                </header>
                 <!--  -->
                 <section class="system-page-text">
                     <section>
@@ -79,7 +73,7 @@
                 const path = query.get("path");
                 let previous = "/static/demo";
 
-                // * 純範例用，請直接透過後端實現
+                // * 純範例用，請直接透過後端渲染
                 let text;
                 await fetch(path)
                     .then(response => response.text())
@@ -95,13 +89,13 @@
                 page = new QUI({
                     id: "body",
                     data: {
-                        // * 純範例用，請直接透過後端實現
+                        // * 純範例用，請直接透過後端渲染
                         ...demo_datas,
                         isChild: path === previous,
                         path
                     },
                     event: {
-                        // * 純範例用，請直接透過後端實現
+                        // * 純範例用，請直接透過後端渲染
                         ...demo_events,
                         ...system_events,
                     },
