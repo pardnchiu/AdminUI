@@ -3,7 +3,7 @@
 namespace App\Controllers\POST;
 
 use App\Models\AuthAdmin;
-use App\Models\SQL;
+use PD\SQL;
 
 class LoginController
 {

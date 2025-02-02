@@ -4,7 +4,7 @@ namespace App\Controllers\GET;
 
 use App\Controllers\Controller;
 use App\Models\AuthAdmin;
-use App\Models\SQL;
+use PD\SQL;
 
 class HomeController extends Controller
 {

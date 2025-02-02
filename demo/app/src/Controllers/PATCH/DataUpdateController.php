@@ -3,7 +3,7 @@
 namespace App\Controllers\PATCH;
 
 use App\Controllers\Controller;
-use App\Models\SQL;
+use PD\SQL;
 
 class DataUpdateController extends Controller
 {

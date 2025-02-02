@@ -1,6 +1,6 @@
 {
     "name": "@pardnchiu/adminui",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "description": "AdminUI is a simple backend management system template with an intuitive interface and a modular architecture, supporting custom extensions, enabling developers to quickly build and customize backend management platforms.",
     "main": "",
     "scripts": {

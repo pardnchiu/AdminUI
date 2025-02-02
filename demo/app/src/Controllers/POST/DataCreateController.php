@@ -3,7 +3,7 @@
 namespace App\Controllers\POST;
 
 use App\Controllers\Controller;
-use App\Models\SQL;
+use PD\SQL;
 
 class DataCreateController extends Controller
 {

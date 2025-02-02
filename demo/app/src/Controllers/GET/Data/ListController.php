@@ -3,8 +3,8 @@
 namespace App\Controllers\GET\Data;
 
 use App\Controllers\Controller;
-use App\Models\Async;
-use App\Models\SQL;
+use PD\Async;
+use PD\SQL;
 
 class ListController extends Controller
 {
