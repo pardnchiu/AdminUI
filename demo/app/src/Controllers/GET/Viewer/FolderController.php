@@ -29,7 +29,22 @@ class FolderController extends Controller
         };
         $folder_path = "/" . $target;
         $dir = get_path($folder_path);
-        $items = array_diff(scandir($dir), array(".", ".."));
+        // $items = array_diff(scandir($dir), array(".", ".."));
+
+        // 獲取目錄列表
+        $allItems = scandir($dir);
+        
+        PrintDebug($target);
+        // 分離特殊目錄和一般檔案
+        $specialDirs = $target == "storage/" ? [] : array_filter($allItems, fn($item) => $item === "..");
+        $normalItems = array_filter($allItems, function($item) {
+            // 排除 . 和 .. ，以及其他隱藏檔案
+            return !($item === "." || $item === "..") && !preg_match('/^\./', $item);
+        });
+        
+        // 合併特殊目錄和一般檔案
+        $items = array_merge($specialDirs, $normalItems);
+
         $files = [];
         $folders = [];
 

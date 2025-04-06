@@ -7,7 +7,7 @@ Icon?
 
 # 忽略 php 套件
 **/composer.lock
-**/vendor
+**/vendor*
 **/storage/image/*
 **/storage/logs/*.log
 **/storage/caches/*
